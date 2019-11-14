@@ -1,5 +1,5 @@
 <?php 
-  echo  'Welcome';
+  echo  'This is the homepage. Welcome Gentleman';
 
 
 
