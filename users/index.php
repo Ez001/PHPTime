@@ -3,9 +3,9 @@
 	function forgotpassword($pass,$name,$to)
   {
       $body ="<table  width=100% border=0><tr><td>";
-      $body .= "<img width=200 src='";
+      //$body .= "<img width=200 src='";
      // $body .= $this->imageUrl();
-      $body .="'></img></td><td style=position:absolute;left:350;top:60;><h2><font color = #346699>PMS Pvt Ltd.</font><h2></td></tr>";
+      //$body .="'></img></td><td style=position:absolute;left:350;top:60;><h2><font color = #346699>PMS Pvt Ltd.</font><h2></td></tr>";
       $body .='<tr><td colspan=2><br/><br/><br/><strong>Dear '.$name.',</strong></td></tr>';
       $body .= '<tr><td colspan=2><br/><font size=3>As per Your request we send Your Password.</font><br/><br/>Password is : <b>'.$pass.'</b></td></tr>';
       $body .= '<tr><td colspan=2><br/>If you have any questions, please feel free to contact us at:<br/><a href="mailto:support@pms.com" target="_blank">support@pms.com</a></td></tr>';
@@ -26,11 +26,7 @@
         mail($to,$subject,$body,$headersfrom);
     }
 	
-    function imageUrl()
-    {
-        return "http://".$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")+1)."images/upload/138601490237012A.jpg";
-    }
-      
+         
     $to ='ezra00100@gmail.com';
     $pass ='Welome to here';
     $name = 'Adamu Ezra';
