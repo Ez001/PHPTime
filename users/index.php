@@ -32,8 +32,11 @@
     }
       
     $to ='ezra00100@gmail.com';
-    $body ='Welome to here';
+    $pass ='Welome to here';
     $name = 'Adamu Ezra';
-    echo forgotpassword($pass,$name,$to);
+    forgotpassword($pass,$name,$to);
+
+    echo 'Done';
+
 	
 ?>
