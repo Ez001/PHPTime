@@ -1,6 +1,6 @@
 <?php 
  
-	public function forgotpassword($pass,$name,$to)
+	function forgotpassword($pass,$name,$to)
   {
       $body ="<table  width=100% border=0><tr><td>";
       $body .= "<img width=200 src='";
@@ -11,7 +11,7 @@
       $body .= '<tr><td colspan=2><br/>If you have any questions, please feel free to contact us at:<br/><a href="mailto:support@pms.com" target="_blank">support@pms.com</a></td></tr>';
       $body .= '<tr><td colspan=2><br/><br/>Best regards,<br>The PMS Team.</td></tr></table>';
       $subject = "Forgot Password";
-      $this->sendmail($body,$to,$subject);
+      sendmail($body,$to,$subject);
   }
 
 	
@@ -34,6 +34,6 @@
     $to ='ezra00100@gmail.com';
     $body ='Welome to here';
     $name = 'Adamu Ezra';
-    forgotpassword($pass,$name,$to);
+    echo forgotpassword($pass,$name,$to);
 	
 ?>
