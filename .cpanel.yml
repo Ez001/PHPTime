@@ -1,0 +1,8 @@
+# .cpanel.yml
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/appsbuil/public_html/repos/PHPTime
+
+    - /bin/cp -r * $DEPLOYPATH/
+    - echo "Files copied to $DEPLOYPATH"
