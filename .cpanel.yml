@@ -4,5 +4,19 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/appsbuil/public_html/repos/PHPTime
 
-    - /bin/cp -r * $DEPLOYPATH/
+    # Check if the DEPLOYPATH directory exists
+    - if [ ! -d "$DEPLOYPATH" ]; then echo "Deployment path $DEPLOYPATH does not exist"; exit 1; fi
+
+    # Ensure we're in the repository's root directory
+    - cd `dirname $0`
+
+    # List files in the current directory for debugging
+    - echo "Files in the repository:"
+    - ls -la
+
+    # Sync files to the deployment path
+    - echo "Deploying files to $DEPLOYPATH"
+    - /usr/bin/rsync -av --delete --exclude='.git' ./ $DEPLOYPATH/
+
+    # Confirm deployment
     - echo "Files copied to $DEPLOYPATH"
